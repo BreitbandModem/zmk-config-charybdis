@@ -9,6 +9,7 @@
 #define LOWER   1
 #define RAISE   2
 #define NAV     3
+#define MOUSE   4
 
 // todo: make dongle work.
 // https://github.com/zmkfirmware/zmk/tree/main/app/boards/shields/corne
@@ -96,6 +97,19 @@
 //|------------+-----------+---------+----------+-----------+-------+----|  |----+---------+----------+--------+-----------+--------+-------|
                                             &trans   &kp SPACE   &kp BSPC    &kp RET   &kp SPACE
                                          //`-------+-----------+---------'  `--------+----------'
+                        >;
+                };
+                mouse_layer {
+                        bindings = <
+//,-------------------------------------------------------.            ,------------------------------------------------------.
+    &trans      &trans   &trans   &trans   &trans   &trans              &trans   &trans   &trans   &trans   &trans   &trans
+//|-----------+--------+--------+--------+--------+-------|            |-------+--------+--------+--------+--------+----------|
+    &trans      &trans   &trans   &trans   &trans   &trans              &trans   &trans   &trans   &trans   &trans   &trans
+//|-----------+--------+--------+--------+--------+-------|            |-------+--------+--------+--------+--------+----------|
+    &mkp MCLK   &trans   &trans   &trans   &trans   &trans              &trans   &trans   &trans   &trans   &trans   &mkp LCLK
+//|-----------+--------+--------+--------+--------+-------+----|  |----+-------+--------+--------+--------+--------+----------|
+                                 &mkp RCLK   &mkp LCLK   &trans    &trans   &trans
+                              //`----------+-----------+-------'  `-------+-------'
                         >;
                 };
         };
