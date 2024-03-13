@@ -1,3 +1,9 @@
+#define DEFAULT 0
+#define MOUSE   1
+#define LOWER   2
+#define RAISE   3
+#define NAV     4
+
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
@@ -31,8 +37,8 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        automouse-layer = <2>;
-        scroll-layers = <4>;
-        snipe-layers = <3>;
+        automouse-layer = <MOUSE>;
+        snipe-layers = <LOWER>;
+        scroll-layers = <RAISE>;
     };
 };
